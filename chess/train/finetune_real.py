@@ -228,7 +228,7 @@ def main() -> int:
                     help="lr multiplier for the unfrozen VLM group (--train-vlm-top)")
     ap.add_argument("--out", default=None, help="checkpoint dir (default out/ft_<name>)")
     ap.add_argument("--run-name", default=None)
-    ap.add_argument("--wandb", default="pretrain-to-adapt", help="wandb project")
+    ap.add_argument("--wandb", default="vla-chess", help="wandb project")
     ap.add_argument("--no-wandb", action="store_true")
     ap.add_argument("--smoke", action="store_true", help="tiny: 4 steps, no wandb/ckpt")
     args = ap.parse_args()

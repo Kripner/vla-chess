@@ -1,4 +1,4 @@
-# Pretrain to Adapt: VLA Adaptation with Real and Simulated Data
+# VLA Adaptation with Real and Simulated Data: Robotic Chess
 
 Code for the CoRL 2026 workshop paper *VLA Adaptation with Real and Simulated Data: A Case Study on
 Robotic Chess* (Matěj Kripner, Milan Straka; Charles University).
@@ -91,7 +91,7 @@ the VLM from PaliGemma, the action expert random), `--pretrained lerobot/pi0_bas
 
 **Real data.** The real datasets train with the same command. Their fisheye views are rectified
 to the simulator's pinhole camera on the fly (`camera/`), and `splits/` holds the paper's splits
-of the real king moves (8, 32, 128 and 256 demonstrations). Pretraining in simulation means
+of the real king moves (8, 32, 128 and 256 demonstrations, see Dataset). Pretraining in simulation means
 `--pretrained <a simulation checkpoint's pretrained_model dir>`.
 
 ## Evaluation
@@ -110,17 +110,18 @@ are fixed 1,000-move chains: `easy_v1` places the king at the square centre, `ha
 chunking (`--rtc-delay 5`). Results go to `trials.csv` and `meta.json` in the eval dir.
 `--offload` runs π0.5 on a 4 GB GPU, with the weights streamed from host memory.
 
-## Datasets
+## Dataset
 
-The real datasets are in LeRobot v3 format at 30 fps, with both camera views, the joint state
-and actions in calibrated degrees (gripper 0–100), the stage marks as `language_persistent`
-rows, and per-episode grades in `meta/outcomes.json`.
+The real teleoperated demonstrations of the paper are at
+[Kripi/so101-chess-king-moves-real](https://huggingface.co/datasets/Kripi/so101-chess-king-moves-real):
+261 king moves in LeRobot v3 format at 30 fps, with both raw camera views, the joint state and
+actions in calibrated degrees (gripper 0–100), the stage marks as `language_persistent` rows and
+per-episode grades in `meta/outcomes.json`. `splits/` holds the paper's splits of it.
 
-| Dataset | Episodes | Contents |
-|---|---|---|
-| King moves, real | 261 | the teleoperated demonstrations of the paper |
-| Real evaluation rollouts | 25 per model | every real trial of the evaluated policies, with its grade |
-| Full chess, real | 848 | teleoperated pick-and-place moves of all pieces |
+```bash
+python -m chess.train.finetune_real Kripi/so101-chess-king-moves-real --pretrained <checkpoint> \
+    --episodes splits/so101-chess-king-moves-real_n128.json ...
+```
 
 ## Layout
 
@@ -148,10 +149,10 @@ Apache 2.0 (see `LICENSE`). The SO-101 model in `assets/so101/` comes from
 If you find this work helpful in your research, cite as:
 
 ```bibtex
-@inproceedings{kripner2026vla,
+@misc{kripner2026vla,
   title={VLA Adaptation with Real and Simulated Data: A Case Study on Robotic Chess},
   author={Matěj Kripner and Milan Straka},
-  booktitle={CoRL 2026 Workshop on Pretrain to Adapt: What Makes a Pretrained Policy Adaptable?},
+  howpublished={CoRL 2026 Workshop on Pretrain to Adapt: What Makes a Pretrained Policy Adaptable?},
   year={2026},
   url={https://corl2026-robotcl.github.io/}
 }

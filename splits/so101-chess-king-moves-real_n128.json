@@ -1,5 +1,5 @@
 {
-"dataset": "real_e2e_v2_d2",
+"dataset": "so101-chess-king-moves-real",
 "rule": "successes only (good|mid, marked), shuffled (seed 0); val = first 0 successes, train = the next 128",
 "val": [],
 "train": [
