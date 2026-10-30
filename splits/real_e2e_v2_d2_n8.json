@@ -1,0 +1,19 @@
+{
+"dataset": "real_e2e_v2_d2",
+"rule": "successes only (good|mid, marked), shuffled (seed 0); val = first 0 successes, train = the next 8",
+"val": [],
+"train": [
+244,
+223,
+59,
+107,
+120,
+169,
+40,
+246
+],
+"source": {
+"episodes": 261,
+"successes": 259
+}
+}

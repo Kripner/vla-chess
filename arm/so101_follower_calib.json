@@ -1,0 +1,9 @@
+{
+    "_comment": "The real SO-101 follower's lerobot calibration. It defines the calibrated-degree units of every dataset: arm/mapping.py derives the degrees<->ticks mapping from range_min/range_max (lerobot DEGREES mode centers on their midpoint; homing_offset/drive_mode are informational).",
+    "shoulder_pan": {"id": 1, "drive_mode": 0, "homing_offset": -1467, "range_min": 680, "range_max": 3401},
+    "shoulder_lift": {"id": 2, "drive_mode": 0, "homing_offset": -1652, "range_min": 877, "range_max": 3259},
+    "elbow_flex": {"id": 3, "drive_mode": 0, "homing_offset": 1912, "range_min": 844, "range_max": 3057},
+    "wrist_flex": {"id": 4, "drive_mode": 0, "homing_offset": 1242, "range_min": 888, "range_max": 3236},
+    "wrist_roll": {"id": 5, "drive_mode": 0, "homing_offset": -1516, "range_min": 0, "range_max": 4095},
+    "gripper": {"id": 6, "drive_mode": 0, "homing_offset": 1130, "range_min": 2032, "range_max": 3504}
+}

@@ -1,0 +1,8 @@
+# torch / torchvision first, for your CUDA (the paper used torch 2.7.1 + cu118)
+lerobot[smolvla,dataset]==0.6.1
+mujoco==3.12.0
+trimesh
+opencv-python
+imageio
+accelerate
+wandb

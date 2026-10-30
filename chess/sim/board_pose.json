@@ -1,0 +1,37 @@
+{
+ "_comment": "The SIM board pose: nominal by construction \u2014 the board sits square to the arm base at the chess.task geometry, surface at BOARD_TOP. The real robot's board pose is a TOUCH CALIBRATION of the physical setup: its yaw and tilt largely absorb the real arm's kinematic error, so applying it to the sim (whose arm is the exact URDF model) would rotate and tilt the board for no physical reason. Keep the two apart.",
+ "T_base_board": [
+  [
+   1.0,
+   0.0,
+   0.0,
+   0.0
+  ],
+  [
+   0.0,
+   1.0,
+   0.0,
+   0.238
+  ],
+  [
+   0.0,
+   0.0,
+   1.0,
+   0.0235
+  ],
+  [
+   0.0,
+   0.0,
+   0.0,
+   1.0
+  ]
+ ],
+ "method": "nominal",
+ "center_m": [
+  0.0,
+  0.238,
+  0.0235
+ ],
+ "yaw_deg": 0.0,
+ "tilt_deg": 0.0
+}
