@@ -138,18 +138,21 @@ schedules/    the evaluation schedules
 splits/       the paper's splits of the real king-move dataset
 ```
 
-## Citation
-
-```bibtex
-@inproceedings{kripner2026vla,
-  title     = {{VLA} Adaptation with Real and Simulated Data: A Case Study on Robotic Chess},
-  author    = {Kripner, Mat\v{e}j and Straka, Milan},
-  booktitle = {CoRL 2026 Workshop on Pretrain to Adapt: What Makes a Pretrained Policy Adaptable?},
-  year      = {2026}
-}
-```
-
 ## License
 
 Apache 2.0 (see `LICENSE`). The SO-101 model in `assets/so101/` comes from
 [SO-ARM100](https://github.com/TheRobotStudio/SO-ARM100) (Apache 2.0).
+
+## Cite
+
+If you find this work helpful in your research, cite as:
+
+```bibtex
+@inproceedings{kripner2026vla,
+  title={VLA Adaptation with Real and Simulated Data: A Case Study on Robotic Chess},
+  author={Matěj Kripner and Milan Straka},
+  booktitle={CoRL 2026 Workshop on Pretrain to Adapt: What Makes a Pretrained Policy Adaptable?},
+  year={2026},
+  url={https://corl2026-robotcl.github.io/}
+}
+```
